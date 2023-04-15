@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+{% extends 'base/main.html' %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <h3>Task Form</h3>
-    <a href="{% url 'tasks' %}">Go back</a>
-    <form method="post" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit"/>
-    </form>
+
+    <div class="header-bar">
+        <a href="{% url 'tasks' %}">&#8592; Back</a>
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="button" type="submit" value="Submit"/>
+        </form>
+    </div>
+
 </body>
+{% endblock content %}
 </html>
